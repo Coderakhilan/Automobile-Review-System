@@ -214,7 +214,7 @@
 
     async function fetchReviews() {
       try {
-        const response = await fetch('http://localhost:3000/api/reviews');
+        const response = await fetch('/api/reviews');
         const reviews = await response.json();
         
         reviewsList.innerHTML = reviews.map(review => {
