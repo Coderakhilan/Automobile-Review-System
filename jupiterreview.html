@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TVS Jupiter - Complete Review</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Archivo Black', sans-serif;
+    }
+
+    body {
+      background: white;
+      color: #111;
+    }
+
+    header {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        body {
+            font-family: 'Rubik Bold'
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        @font-face {
+            font-family: 'Rubik Bold';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+     .navbar {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar img {
+      height: 45px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a.active {
+      color: white;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transform: scaleX(1);
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      background-color: black;
+      color: white;
+      padding: 6px 15px;
+      border-radius: 5px;
+      font-size: 15px;
+      display: inline-block;
+    }
+
+    .title {
+      font-size: 20px;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .main-content {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .main-image img {
+      width: 520px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      border: 3px solid #000;
+    }
+
+    .review-box {
+      flex: 1;
+    }
+
+    .review-box h3 {
+      margin-bottom: 10px;
+    }
+
+    .pros, .cons {
+      margin-bottom: 25px;
+    }
+
+    .pros ul, .cons ul {
+      padding-left: 25px;
+    }
+
+    .icon {
+      font-size: 22px;
+      margin-right: 10px;
+    }
+
+    .buttons-container {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background: #000;
+      color: #fff;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background: #808080;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .review-btn {
+      background: #2b2bff;
+    }
+
+    .review-btn:hover {
+      background: #808080;
+    }
+
+    /* Image Gallery Section */
+    .gallery-section {
+      margin: 60px 0;
+      padding: 40px 0;
+      background: #f8f8f8;
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 60px;
+      flex-wrap: wrap;
+    }
+
+    .image-row img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    /* Specs and Ratings Section */
+    .specs-rating {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1400px;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .left {
+      flex: 0 1 600px;
+    }
+
+    .right {
+      flex: 0 1 600px;
+    }
+
+    .left .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .left .item img {
+      width: 28px;
+      margin-right: 15px;
+      opacity: 0.9;
+    }
+
+    .left .ratings-title {
+      font-weight: bold;
+      font-size: 20px;
+      margin: 35px 0 25px;
+      text-decoration: underline;
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      height: 24px;
+    }
+
+    .bar img {
+      width: 24px;
+      margin-right: 15px;
+      opacity: 0.85;
+    }
+
+    .bar .label {
+      min-width: 140px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .bar .progress {
+      height: 6px;
+      width: 250px;
+      background: #ddd;
+      margin: 0 20px;
+      border-radius: 3px;
+      align-self: center;
+    }
+
+    .bar .progress .fill {
+      height: 100%;
+      background: #000;
+      border-radius: 3px;
+    }
+
+    .score {
+      font-weight: 600;
+      font-size: 18px;
+      min-width: 30px;
+      text-align: right;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 0;
+    }
+
+    .card {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .circle {
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+
+    .circle::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(
+        #fff var(--progress), 
+        rgba(255,255,255,0.2) var(--progress)
+      );
+      mask: radial-gradient(transparent 55%, #000 56%);
+      -webkit-mask: radial-gradient(transparent 55%, #000 56%);
+    }
+
+    .circle span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    [data-rating="9"] { --progress: 90%; }
+    [data-rating="8"] { --progress: 80%; }
+    [data-rating="7"] { --progress: 70%; }
+    [data-rating="6"] { --progress: 60%; }
+
+    /* Form Container Styles */
+    .form-container {
+      padding: 60px 40px;
+      background: #fff;
+      margin: 60px 0;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .review-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 60px;
+      margin-bottom: 50px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 20px;
+      border: 2px solid black;
+      font-size: 16px;
+    }
+
+    .slider-section {
+      margin: 50px auto;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      padding: 10px 0;
+    }
+
+    .slider-row label {
+      width: 150px;
+      font-weight: 700;
+      font-size: 18px;
+      color: black;
+    }
+
+    .slider-row input[type="range"] {
+      width: 300px;
+      -webkit-appearance: none;
+      height: 8px;
+      background: #000;
+      border-radius: 10px;
+      outline: none;
+      margin: 0 20px;
+    }
+
+    .slider-row input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .slider-row span {
+      font-size: 24px;
+      font-weight: bold;
+      width: 40px;
+      text-align: center;
+      color: #000;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 15px 30px;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      width: 40%;
+    }
+
+    .submit-btn::after {
+      content: "★";
+      margin-left: 10px;
+    }
+
+    .submit-btn:hover {
+      background: #808080;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .footer-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: opacity 0.3s;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      transition: opacity 0.3s;
+    }
+
+    .social-icons a:hover {
+      opacity: 0.7;
+    }
+
+    .copyright {
+      color: white;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    @media(max-width: 1400px) {
+      .specs-rating {
+        justify-content: center;
+        gap: 40px;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .specs-rating {
+        padding: 0 20px;
+      }
+
+      .left, .right {
+        flex: 0 1 100%;
+      }
+
+      nav a {
+        margin-left: 15px;
+      }
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      color: #28a745;
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <img src="logo.jpg" alt="Auto Info Logo" onclick="location.href='Index.html'">
+    <div class="nav-links">
+      <a href="bikes.html">Bikes</a>
+      <a href="cars.html">Cars</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html" class="active">Reviews</a>
+    </div>
+  </div>
+
+<!-- Overview Section -->
+<div class="container">
+  <div class="badges">
+    <div class="badge">TVS Jupiter</div>
+    <div class="badge">🛵 Scooter</div>
+  </div>
+
+  <div class="title">
+    TVS Jupiter is a premium scooter with price starting from Rs. 73,000. The scooter features a refined 109.7cc engine that delivers smooth performance and excellent fuel efficiency. Available in multiple color options and variants, the Jupiter offers a perfect blend of comfort and practicality. It delivers a mileage of around 60 kmpl and competes with Honda Activa, Suzuki Access, and Hero Pleasure Plus.
+  </div>
+
+  <div class="main-content">
+    <div class="main-image">
+      <img src="jupiter.png" alt="TVS Jupiter">
+    </div>
+
+    <div class="review-box">
+      <div class="pros">
+        <h3><span class="icon">👍</span>Pros</h3>
+        <ul>
+          <li>Excellent fuel efficiency</li>
+          <li>Comfortable ride quality</li>
+          <li>Spacious under-seat storage</li>
+          <li>Good build quality</li>
+        </ul>
+      </div>
+
+      <div class="cons">
+        <h3><span class="icon">👎</span>Cons</h3>
+        <ul>
+          <li>Limited power output</li>
+          <li>Basic feature list</li>
+          <li>Average braking performance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image Gallery Section -->
+<div class="gallery-section">
+  <h2 class="gallery-title">Exterior Views</h2>
+  <div class="image-row">
+    <img src="jupiter.png" alt="Side View">
+    <img src="jupiterfront.png" alt="Front View">
+    <img src="jupiterback.png" alt="Back View">
+  </div>
+</div>
+
+<!-- Specs and Ratings Section -->
+<div class="container">
+  <div class="specs-rating">
+    <div class="left">
+      <div class="item"><img src="typescooter.png" alt="Type"/> Type - Scooter</div>
+      <div class="item"><img src="price.png" alt="Price"/> Price - Rs. 73,000</div>
+      <div class="item"><img src="fuel.png" alt="Fuel"/> Fuel Type - Petrol</div>
+      <div class="item"><img src="variant.png" alt="Variant"/> Variant - ZX</div>
+      <div class="item"><img src="transmission.png" alt="Transmission"/> Transmission - CVT</div>
+      <div class="item"><img src="suspension.png" alt="Suspension"/> Suspension - Telescopic</div>
+      <div class="item"><img src="usecase.png" alt="Use Case"/> Use Case - City Commute</div>
+
+      <div class="ratings-title">Additional Ratings</div>
+      <div class="bar">
+        <img src="fuelefficiency.png" alt="Fuel Efficiency"/>
+        <span class="label">Fuel Efficiency</span>
+        <div class="progress"><div class="fill" style="width:90%"></div></div>
+        <span class="score">9</span>
+      </div>
+      <div class="bar">
+        <img src="power.png" alt="Power"/>
+        <span class="label">Power</span>
+        <div class="progress"><div class="fill" style="width:70%"></div></div>
+        <span class="score">7</span>
+      </div>
+      <div class="bar">
+        <img src="comfort.png" alt="Comfort"/>
+        <span class="label">Comfort</span>
+        <div class="progress"><div class="fill" style="width:85%"></div></div>
+        <span class="score">8.5</span>
+      </div>
+      <div class="bar">
+        <img src="torque.png" alt="Torque"/>
+        <span class="label">Torque</span>
+        <div class="progress"><div class="fill" style="width:75%"></div></div>
+        <span class="score">7.5</span>
+      </div>
+      <div class="bar">
+        <img src="safety.png" alt="Safety"/>
+        <span class="label">Safety</span>
+        <div class="progress"><div class="fill" style="width:80%"></div></div>
+        <span class="score">8</span>
+      </div>
+      <div class="bar">
+        <img src="overall.png" alt="Overall"/>
+        <span class="label">Overall</span>
+        <div class="progress"><div class="fill" style="width:82%"></div></div>
+        <span class="score">8.2</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="grid">
+        <div class="card">
+          <h3>ENGINE</h3>
+          <div class="circle" data-rating="7">
+            <span>7</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>TECH</h3>
+          <div class="circle" data-rating="6">
+            <span>6</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>BRAKING</h3>
+          <div class="circle" data-rating="8">
+            <span>8</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>DESIGN</h3>
+          <div class="circle" data-rating="8">
+            <span>8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Review Form Section -->
+<div class="form-container">
+  <h2 class="review-title">Share Your Review</h2>
+  <form id="reviewForm">
+    <div class="form-grid">
+      <div>
+        <label>First Name</label>
+        <input type="text" name="firstName" required>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input type="text" name="lastName" required>
+      </div>
+      <div>
+        <label>E-mail</label>
+        <input type="email" name="email" required>
+      </div>
+      <div>
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+      </div>
+    </div>
+
+    <div class="slider-section">
+      <div class="slider-row">
+        <label>ENGINE</label>
+        <input type="range" min="1" max="10" value="5" class="rating-slider" name="engine" required>
+        <span class="rating-value">5</span>
+      </div>
+      <div class="slider-row">
+        <label>TECH</label>
+        <input type="range" min="1" max="10" value="5" class="rating-slider" name="tech" required>
+        <span class="rating-value">5</span>
+      </div>
+      <div class="slider-row">
+        <label>BRAKING</label>
+        <input type="range" min="1" max="10" value="5" class="rating-slider" name="braking" required>
+        <span class="rating-value">5</span>
+      </div>
+      <div class="slider-row">
+        <label>DESIGN</label>
+        <input type="range" min="1" max="10" value="5" class="rating-slider" name="design" required>
+        <span class="rating-value">5</span>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Review</button>
+  </form>
+  <div class="success-message" id="successMessage">Review submitted successfully!</div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <nav class="footer-nav">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+    </div>
+    <div class="copyright">© 2025 AutoInfo.com, Inc</div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('reviewForm');
+  const successMessage = document.getElementById('successMessage');
+  const ratingSliders = document.querySelectorAll('.rating-slider');
+
+  // Update rating values when sliders change
+  ratingSliders.forEach(slider => {
+    slider.addEventListener('input', function() {
+      this.nextElementSibling.textContent = this.value;
+    });
+  });
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const reviewData = {
+      vehicleName: 'TVS Jupiter',
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      engine: parseInt(formData.get('engine')),
+      tech: parseInt(formData.get('tech')),
+      braking: parseInt(formData.get('braking')),
+      design: parseInt(formData.get('design'))
+    };
+
+    try {
+      const response = await fetch('http://localhost:3000/api/reviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reviewData)
+      });
+
+      if (response.ok) {
+        successMessage.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 3000);
+      } else {
+        throw new Error('Failed to submit review');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to submit review. Please try again.');
+    }
+  });
+});
+</script>
+
+</body>
+</html> 

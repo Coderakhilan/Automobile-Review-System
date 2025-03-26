@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Reviews - Auto Info</title>
+  <style>
+    /* ... (your existing styles) ... */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rubik Bold', sans-serif; /* Apply Rubik Bold */
+    }
+
+    @font-face {
+      font-family: 'Rubik Bold';
+      src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap'); /* Link to Rubik Bold */
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    body {
+      background-color: white;
+      color: black;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+    }
+
+    .navbar img {
+      height: 45px;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+      font-weight: bold; /* Apply Rubik Bold */
+      position: relative; /* For triangle positioning */
+      padding-bottom: 5px; /* Add padding for triangle */
+      transition: color 0.3s ease; /* Smooth color transition */
+    }
+
+    .nav-links a:hover {
+      color: #ddd; /* Lighten color on hover */
+    }
+
+    .nav-links a.active {
+      color: white;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -5px; /* Adjust position */
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 8px solid white; /* Triangle */
+      border-radius: 3px 3px 0 0; /* Add curvature to top corners */
+    }
+
+    /* Heading */
+    .page-title {
+      font-weight: bold; /* Apply Rubik Bold */
+      font-size: 20px;
+      margin: 20px 40px;
+    }
+
+    /* Grid of Reviews */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 40px 40px;
+    }
+
+    .review-item {
+      border: 3px solid black; /* Added black border */
+      padding: 15px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+    }
+
+    .review-item:hover {
+      transform: translateY(-5px); /* Slightly lift on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    }
+
+    .review-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: bold; /* Apply Rubik Bold */
+    }
+
+    .review-item p {
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold; /* Apply Rubik Bold */
+    }
+
+    .review-item .rating-bar-container {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .review-item .rating-bar-label {
+      min-width: 80px;
+      text-align: left;
+      font-weight: bold; /* Apply Rubik Bold */
+    }
+
+    .review-item .rating-bar {
+      background-color: #f0f0f0;
+      height: 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      flex-grow: 1;
+      overflow: hidden; /* Ensure bar content stays within bounds */
+    }
+
+    .review-item .rating-bar span {
+      display: block;
+      height: 100%;
+      background-color: black;
+      border-radius: 5px;
+      transition: width 0.5s ease; /* Animate width change */
+    }
+
+    @media screen and (max-width: 768px) {
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <img src="logo.jpg" alt="Auto Info Logo" onclick="location.href='Index.html'">
+    <div class="nav-links">
+      <a href="bikes.html">Bikes</a>
+      <a href="cars.html">Cars</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html" class="active">Reviews</a>
+    </div>
+  </div>
+
+  <div class="page-title">
+    User Reviews
+  </div>
+
+  <div class="review-grid">
+    <script>
+      const userNames = ["Aarav Sharma", "Ananya Patel", "Vikram Singh", "Diya Kumar", "Rohan Mehta", "Ishita Reddy", "Aryan Joshi", "Sneha Banerjee", "Karan Desai", "Priya Nair", "Advait Kapoor", "Meera Choudhary"];
+      const categories = ["ENGINE", "TECH", "BRAKING", "DESIGN"];
+      const carNames = ["Hyundai Verna", "Tata Nexon", "Maruti Suzuki Swift", "Mahindra XUV700", "Kia Seltos", "Honda City", "Toyota Innova Crysta", "Renault Kwid", "Volkswagen Polo", "Skoda Kushaq", "MG Hector", "Nissan Magnite"];
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      for (let i = 0; i < 12; i++) {
+        const userName = userNames[i];
+        const carName = carNames[i];
+        document.write('<div class="review-item">');
+        document.write(`<h3>${userName}'s Review - ${carName}</h3>`);
+        categories.forEach(category => {
+          const rating = getRandomInt(1, 10);
+          document.write(`<p><span class="rating-bar-label">${category}:</span> <span class="rating-bar-container"><span class="rating-bar"><span style="width: ${rating * 10}%;"></span></span> ${rating}</span></p>`);
+        });
+        document.write('</div>');
+      }
+    </script>
+  </div>
+
+</body>
+</html>

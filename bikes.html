@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Info - Bikes</title>
+    <script defer src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik Bold', sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Rubik Bold';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Rubik Bold', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        .navbar {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar img {
+            height: 45px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a.active {
+            color: white;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform: scaleX(1);
+        }
+
+        .search-filter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 60px;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            border: 3px solid black;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: transparent;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background-image: url('search.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .bike-category {
+            padding: 20px 60px;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .view-all {
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+        }
+
+        .bike-list {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .bike-card {
+            background: white;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            min-width: 0; /* Prevents grid blowout */
+        }
+
+        .bike-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .bike-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 1200px) {
+            .bike-list {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .bike-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .bike-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .bike-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.jpg" alt="Auto Info Logo" onclick="location.href='index.html'">
+        <div class="nav-links">
+            <a href="bikes.html" class="active">Bikes</a>
+            <a href="cars.html">Cars</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+    </div>
+
+    <section class="search-filter">
+        <form action="search.html" method="GET" class="search-bar">
+            <input type="text" name="query" placeholder="Search for bikes..." class="search-input" />
+            <button type="submit" class="search-button"></button>
+        </form>
+    </section>
+
+    <section class="bike-category">
+        <h2>Cruiser <span class="view-all" onclick="location.href='cruiser.html'">View all &#10095;</span></h2>
+        <div class="bike-list">
+            <div class="bike-card" onclick="location.href='re350review.html'"><img src="bullet350.png" alt="RE Bullet 350"><br>RE Bullet 350<br>Rs. 1.05L</div>
+            <div class="bike-card"><img src="FZX.png" alt="Yamaha FZ X"><br>Yamaha FZ X<br>Rs. 1.34L</div>
+            <div class="bike-card"><img src="splendorplus.png" alt="Splendor Plus"><br>Splendor Plus<br>Rs. 1.19L</div>
+            <div class="bike-card"><img src="pulsar150.png" alt="Pulsar 150"><br>Pulsar 150<br>Rs. 1.55L</div>
+            <div class="bike-card"><img src="xtreme150R.png" alt="Xtreme 160R"><br>Xtreme 160R<br>Rs. 1.03L</div>
+            <div class="bike-card"><img src="SP125.png" alt="SP 125"><br>SP 125<br>Rs. 1.34L</div>
+        </div>
+    </section>
+
+    <section class="bike-category">
+        <h2>Scooters <span class="view-all" onclick="location.href='scooter.html'">View all &#10095;</span></h2>
+        <div class="bike-list">
+            <div class="bike-card" onclick="location.href='jupiterreview.html'"><img src="jupitor.png" alt="TVS Jupiter"><br>TVS Jupiter<br>Rs. 2.45L</div>
+            <div class="bike-card"><img src="vespa.png" alt="Vespa VXL 125"><br>Vespa VXL 125<br>Rs. 2.24L</div>
+            <div class="bike-card"><img src="wego.png" alt="TVS Wego"><br>TVS Wego<br>Rs. 2.99L</div>
+            <div class="bike-card"><img src="pep.png" alt="Scooty Pep"><br>Scooty Pep<br>Rs. 1.49L</div>
+            <div class="bike-card"><img src="activa.png" alt="Honda Activa 3G"><br>Honda Activa 3G<br>Rs. 2.69L</div>
+            <div class="bike-card"><img src="RayZR.png" alt="Yamaha Ray ZR"><br>Yamaha Ray ZR<br>Rs. 1.89L</div>
+        </div>
+    </section>
+</body>
+</html>

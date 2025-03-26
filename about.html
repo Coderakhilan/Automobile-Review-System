@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Auto Info</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik Bold', sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Rubik Bold';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar img {
+            height: 45px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a.active {
+            color: white;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform: scaleX(1);
+        }
+
+        /* Main Section - Text Image + Car Image */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 100px auto 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Left-Aligned Text Image */
+        .text-image img {
+            width: 300%;
+            max-width: 600px;
+        }
+
+        /* Right-Aligned Car Image */
+        .car-image img {
+            width: 70%;
+            max-width: 500px;
+        }
+
+        /* Centered Paragraph Below */
+        .about-text {
+            max-width: 1000px;
+            margin: 20px auto;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.6;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.jpg" alt="Auto Info Logo" onclick="location.href='index.html'">
+        <div class="nav-links">
+            <a href="bikes.html">Bikes</a>
+            <a href="cars.html">Cars</a>
+            <a href="about.html" class="active">About</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+    </div>
+
+    <section class="about-container">
+        <div class="text-image">
+            <img src="AUTOMOBILE REVIEWS SIMPLIFIED..png" alt="Automobile Reviews Simplified">
+        </div>
+        <div class="car-image">
+            <img src="logo3.png" alt="Car">
+        </div>
+    </section>
+
+    <section class="about-text">
+        <p>Welcome to AutoInfo, your go-to platform for simple, easy-to-understand car insights! We know that car specifications, ratings, and reviews can be confusing—especially if you're not a car expert. That's why AutoInfo breaks down complex details into clear, layman-friendly explanations, helping you make informed decisions without the technical jargon.</p>
+    </section>
+</body>
+</html>

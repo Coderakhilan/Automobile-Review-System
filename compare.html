@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compare Cars - Auto Info</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: white;
+      color: black;
+    }
+
+    /* Header */
+    .navbar {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+    }
+
+    .navbar img {
+      height: 45px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a.active {
+      text-decoration: underline;
+    }
+
+    /* Page Title */
+    .page-title {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Comparison Section */
+    .compare-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+    }
+
+    .car-card {
+      width: 30%;
+      border: 2px solid black;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .car-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .car-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .divider-icon {
+      margin: 10px auto 20px;
+      width: 80px;
+      height: 40px;
+      border: 2px solid black;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .specs {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .spec-row {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .spec-row img.icon {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+    }
+
+    .spec-text {
+      flex: 1;
+    }
+
+    @media screen and (max-width: 1024px) {
+      .car-card {
+        width: 90%;
+        margin: 20px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="logo.jpg" alt="Auto Info Logo" onclick="location.href='Index.html'">
+    <div class="nav-links">
+      <a href="bikes.html">Bikes</a>
+      <a href="cars.html">Cars</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html" class="active">Reviews</a>
+    </div>
+  </div>
+
+  <!-- Page Heading -->
+  <div class="page-title">
+    Compare with 🔑
+  </div>
+
+  <!-- Comparison Cards -->
+  <div class="compare-container">
+
+    <!-- Hyundai Verna -->
+    <div class="car-card">
+      <img src="exterior1.png" alt="Hyundai Verna">
+      <div class="car-title">Hyundai Verna</div>
+      <div class="divider-icon">
+        🚗
+      </div>
+      <div class="specs">
+        <div class="spec-row"><span class="spec-text">🚗 Type - Sedan</span></div>
+        <div class="spec-row"><span class="spec-text">🏷️ Price - Rs. 11.09L</span></div>
+        <div class="spec-row"><span class="spec-text">⛽ Fuel Type - Petrol</span></div>
+        <div class="spec-row"><span class="spec-text">🚙 Variant - EX</span></div>
+        <div class="spec-row"><span class="spec-text">⚡ Power - 5500rpm | 9 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛠️ Torque - 1500-3500rpm | 7 Star</span></div>
+        <div class="spec-row"><span class="spec-text">⚙️ Transmission - Automatic</span></div>
+        <div class="spec-row"><span class="spec-text">⛽ Fuel Efficiency - 12.6 kmpl | 7 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛡️ Safety - 5 Star NCAP rating</span></div>
+        <div class="spec-row"><span class="spec-text">🪑 Comfort - 9 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛞 Suspension - Balanced</span></div>
+        <div class="spec-row"><span class="spec-text">👨‍👩‍👧‍👦 Use Case - City (Family)</span></div>
+      </div>
+    </div>
+
+    <!-- Maruti Dzire -->
+    <div class="car-card">
+      <img src="dzire.png" alt="Maruti Dzire">
+      <div class="car-title">Maruti Dzire</div>
+      <div class="divider-icon">
+        🚗
+      </div>
+      <div class="specs">
+        <div class="spec-row"><span class="spec-text">🚗 Type - Sedan</span></div>
+        <div class="spec-row"><span class="spec-text">🏷️ Price - Rs. 6.83L</span></div>
+        <div class="spec-row"><span class="spec-text">⛽ Fuel Type - Petrol</span></div>
+        <div class="spec-row"><span class="spec-text">🚙 Variant - VXI</span></div>
+        <div class="spec-row"><span class="spec-text">⚡ Power - 5500rpm | 9 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛠️ Torque - 1500-3500rpm | 7 Star</span></div>
+        <div class="spec-row"><span class="spec-text">⚙️ Transmission - Automatic</span></div>
+        <div class="spec-row"><span class="spec-text">⛽ Fuel Efficiency - 12.6 kmpl | 7 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛡️ Safety - 5 Star NCAP rating</span></div>
+        <div class="spec-row"><span class="spec-text">🪑 Comfort - 8 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛞 Suspension - Balanced</span></div>
+        <div class="spec-row"><span class="spec-text">👨‍👩‍👧‍👦 Use Case - City (Family)</span></div>
+      </div>
+    </div>
+
+    <!-- Tata Curvv -->
+    <div class="car-card">
+      <img src="curvv.png" alt="Tata Curvv">
+      <div class="car-title">Tata Curvv</div>
+      <div class="divider-icon">
+        🚗
+      </div>
+      <div class="specs">
+        <div class="spec-row"><span class="spec-text">🚙 Type - SUV</span></div>
+        <div class="spec-row"><span class="spec-text">🏷️ Price - Rs. 19.09L</span></div>
+        <div class="spec-row"><span class="spec-text">⛽ Fuel Type - Petrol</span></div>
+        <div class="spec-row"><span class="spec-text">🚙 Variant - Smart</span></div>
+        <div class="spec-row"><span class="spec-text">⚡ Power - 5000rpm | 8 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛠️ Torque - 1500-3000rpm | 6 Star</span></div>
+        <div class="spec-row"><span class="spec-text">⚙️ Transmission - Automatic</span></div>
+        <div class="spec-row"><span class="spec-text">⛽ Fuel Efficiency - 12.6 kmpl | 7 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛡️ Safety - 5 Star NCAP rating</span></div>
+        <div class="spec-row"><span class="spec-text">🪑 Comfort - 8 Star</span></div>
+        <div class="spec-row"><span class="spec-text">🛞 Suspension - Balanced</span></div>
+        <div class="spec-row"><span class="spec-text">👨‍👩‍👧‍👦 Use Case - City (Family)</span></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

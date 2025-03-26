@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Auto Info</title>
+    <style>
+        body {
+            font-family: 'Rubik Bold', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        @font-face {
+            font-family: 'Rubik Bold';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ddd;
+            transform: translateY(-3px);
+        }
+
+        nav ul li.current-page a {
+            color: white;
+        }
+
+        nav ul li.current-page::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 8px solid white;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .search-filter {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin: 20px;
+            margin-left: 60px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            border: 3px solid black;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: transparent;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background-image: url('search.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 20px 60px 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 0 60px 60px;
+        }
+
+        .card {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 180px;
+            border: 3px solid black; /* Increased border thickness */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .card .model {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .card .price {
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="location.href='index.html'">
+            <img src="logo.jpg" alt="logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="cars.html">Cars</a></li>
+                <li class="current-page"><a href="bikes.html">Bikes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="search-filter">
+        <form action="search.html" method="GET" class="search-bar">
+            <input type="text" name="query" placeholder="Search for bikes..." class="search-input" />
+            <button type="submit" class="search-button"></button>
+        </form>
+    </section>
+
+    <h2>Scooter</h2>
+
+    <div class="grid">
+        <div class="card" onclick="location.href='jupiterreview.html'">
+    <img src="jupitor.png" alt="TVS Jupiter">
+    <div class="model">TVS Jupiter</div>
+    <div class="price">Rs. 2.45L</div>
+</div>
+        <div class="card">
+            <img src="vespa.png" alt="Vespa VXL 125">
+            <div class="model">Vespa VXL 125</div>
+            <div class="price">Rs. 2.24L</div>
+        </div>
+        <div class="card">
+            <img src="wego.png" alt="TVS Wego">
+            <div class="model">TVS Wego</div>
+            <div class="price">Rs. 2.99L</div>
+        </div>
+        <div class="card">
+            <img src="pep.png" alt="Scooty Pep">
+            <div class="model">Scooty Pep</div>
+            <div class="price">Rs. 1.49L</div>
+        </div>
+        <div class="card">
+            <img src="activa.png" alt="Honda Activa 3G">
+            <div class="model">Honda Activa 3G</div>
+            <div class="price">Rs. 2.69L</div>
+        </div>
+        <div class="card">
+            <img src="RayZR.png" alt="Yamaha Ray ZR">
+            <div class="model">Yamaha Ray ZR</div>
+            <div class="price">Rs. 1.94L</div>
+        </div>
+    </div>
+</body>
+</html>

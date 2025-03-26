@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Info</title>
+    <style>
+        body {
+            font-family: 'Rubik Bold', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        @font-face {
+            font-family: 'Rubik Bold';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ddd;
+            transform: translateY(-3px);
+        }
+
+        nav ul li.current-page a {
+            color: white;
+        }
+
+        nav ul li.current-page::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 8px solid white;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .search-filter {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin: 20px;
+            margin-left: 60px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            border: 3px solid black;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: transparent;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background-image: url('search.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .car-category {
+            margin: 20px;
+        }
+
+        .car-category h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .car-list {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .car-card {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 180px;
+            border: 3px solid black;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .view-all {
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" onclick="location.href='index.html'">
+            <img src="logo.jpg" alt="Auto Info Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="bikes.html">Bikes</a></li>
+                <li class="current-page"><a href="cars.html">Cars</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="search-filter">
+        <form action="search.html" method="GET" class="search-bar">
+            <input type="text" name="query" placeholder="Search for cars..." class="search-input" />
+            <button type="submit" class="search-button"></button>
+        </form>
+    </section>
+
+    <section class="car-category">
+        <h2>Sedan <span class="view-all" onclick="location.href='sedan.html'">View all &#10095;</span></h2>
+        <div class="car-list">
+            <div class="car-card" onclick="location.href='vernareview.html'"><img src="Hyundai Verna.png" alt="Hyundai Verna"><br>Hyundai Verna<br>Rs. 17.05L</div>
+            <div class="car-card"><img src="Volkswagen Virtus.png" alt="Volkswagen Virtus"><br>Volkswagen Virtus<br>Rs. 19.34L</div>
+            <div class="car-card"><img src="amaze.png" alt="Honda Amaze"><br>Honda Amaze<br>Rs. 11.19L</div>
+            <div class="car-card"><img src="city.png" alt="Honda City"><br>Honda City<br>Rs. 16.55L</div>
+            <div class="car-card"><img src="bmw.png" alt="BMW M2"><br>BMW M2<br>Rs. 1.03C</div>
+            <div class="car-card"><img src="elantra.png" alt="Hyundai Elantra"><br>Hyundai Elantra<br>Rs. 18.34L</div>
+        </div>
+    </section>
+</body>
+</html>
