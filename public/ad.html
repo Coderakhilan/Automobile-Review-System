@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Info - Admin Panel</title>
+    <style>
+        body {
+            font-family: 'Rubik Bold', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        @font-face {
+            font-family: 'Rubik Bold';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ddd;
+            transform: translateY(-3px);
+        }
+
+        nav ul li.current-page a {
+            color: white;
+        }
+
+        nav ul li.current-page::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 8px solid white;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .admin-container {
+            padding: 20px;
+        }
+
+        .vehicle-form, .feedback-management {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .vehicle-form input, .vehicle-form textarea, .vehicle-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .feedback-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" onclick="location.href='index.html'">
+            <img src="logo.jpg" alt="Auto Info Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="bikes.html">Bikes</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <div class="vehicle-form">
+            <h2>Add Vehicle</h2>
+            <form id="addVehicleForm">
+                <input type="text" name="vehicleName" placeholder="Vehicle Name" required><br>
+                <textarea name="description" placeholder="Description" required></textarea><br>
+                <select name="type" required>
+                    <option value="">Select Type</option>
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                </select><br>
+                <input type="number" name="price" placeholder="Price" required><br>
+                <input type="text" name="fuelType" placeholder="Fuel Type" required><br>
+                <input type="text" name="variant" placeholder="Variant" required><br>
+                <input type="number" name="power" placeholder="Power (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="number" name="torque" placeholder="Torque (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="text" name="transmission" placeholder="Transmission" required><br>
+                <input type="number" name="fuelEfficiency" placeholder="Fuel Efficiency (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="number" name="braking" placeholder="Braking (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="number" name="safety" placeholder="Safety (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="number" name="comfort" placeholder="Comfort (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="number" name="tech" placeholder="Tech (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="text" name="suspension" placeholder="Suspension" required><br>
+                <input type="text" name="useCase" placeholder="Use Case" required><br>
+                <input type="number" name="overall" placeholder="Overall (0-10)" min="0" max="10" step="0.1" required><br>
+                <input type="file" name="image" accept="image/*" required><br>
+                <button type="submit">Add Vehicle</button>
+            </form>
+        </div>
+
+        <div class="feedback-management">
+            <h2>Feedback Management</h2>
+            <div id="feedbackList">
+                <div class="feedback-item">
+                    <span>User Feedback: This car is great!</span>
+                    <div>
+                        <button>Approve</button>
+                        <button>Remove</button>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <span>User Feedback: Not so good.</span>
+                    <div>
+                        <button>Approve</button>
+                        <button>Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript for form handling and dynamic content (to be expanded)
+        document.getElementById('addVehicleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle form submission (e.g., send data to server)
+            alert('Vehicle added!');
+        });
+    </script>
+
+</body>
+</html>
