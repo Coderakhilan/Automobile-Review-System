@@ -3,7 +3,6 @@
 
 # Dependencies
 node_modules/
-package-lock.json
 
 # Logs
 logs
@@ -24,12 +23,13 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# nyc test coverage
-.nyc_output
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# IDEs and editors
-.idea/
-.vscode/
-*.swp
-*.swo
+# System Files
 .DS_Store
+Thumbs.db 
