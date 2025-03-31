@@ -25,5 +25,5 @@ it on a review page. The users can also search for vehicles they want to see usi
 Visit https://automobile-review-system.onrender.com to see the live website deployed on render
 
 # Local Deployment
-- Clone the repo and do '''npm install'''
+- Clone the repo and do ```npm install```
 - Replace in code your MongoDB URI and DB password
